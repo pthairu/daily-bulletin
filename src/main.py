@@ -22,7 +22,11 @@ text_only = soup.get_text()
 
 response = client.responses.create(
     model="gpt-4o",
-    instructions="I am going to pass you text from an articles website that I cleaned a little using beautiful soup. Return only the article content and title in a clean format, clean any remaining html or anything else that doesn't belong. If the article seems to be locked behind a login report that the content can't be accessed.",
+    instructions="""
+    I am going to pass you text from an articles website that I cleaned a little using beautiful soup. 
+    Return only the article content and title in a clean format, clean any remaining html or anything else that doesn't belong. 
+    If the article seems to be locked behind a login report that the content can't be accessed.
+    """,
     input=text_only
 )
 
